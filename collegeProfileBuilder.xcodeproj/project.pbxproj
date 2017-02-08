@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F715BE91E4B8B5C002FFBA0 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F715BE81E4B8B5C002FFBA0 /* College.swift */; };
 		3F91F9501E48E8FD00C999CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91F94F1E48E8FD00C999CB /* AppDelegate.swift */; };
 		3F91F9521E48E8FD00C999CB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91F9511E48E8FD00C999CB /* MasterViewController.swift */; };
 		3F91F9541E48E8FD00C999CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91F9531E48E8FD00C999CB /* DetailViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F715BE81E4B8B5C002FFBA0 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		3F91F94C1E48E8FD00C999CB /* collegeProfileBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collegeProfileBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F91F94F1E48E8FD00C999CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F91F9511E48E8FD00C999CB /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				3F91F94F1E48E8FD00C999CB /* AppDelegate.swift */,
 				3F91F9511E48E8FD00C999CB /* MasterViewController.swift */,
+				3F715BE81E4B8B5C002FFBA0 /* College.swift */,
 				3F91F9531E48E8FD00C999CB /* DetailViewController.swift */,
 				3F91F9551E48E8FD00C999CB /* Main.storyboard */,
 				3F91F9581E48E8FD00C999CB /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 				3F91F9541E48E8FD00C999CB /* DetailViewController.swift in Sources */,
 				3F91F9521E48E8FD00C999CB /* MasterViewController.swift in Sources */,
 				3F91F9501E48E8FD00C999CB /* AppDelegate.swift in Sources */,
+				3F715BE91E4B8B5C002FFBA0 /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +513,7 @@
 				3F91F9781E48E8FE00C999CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F91F9791E48E8FE00C999CB /* Build configuration list for PBXNativeTarget "collegeProfileBuilderTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +522,7 @@
 				3F91F97B1E48E8FE00C999CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F91F97C1E48E8FE00C999CB /* Build configuration list for PBXNativeTarget "collegeProfileBuilderUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +531,7 @@
 				3F91F97E1E48E8FE00C999CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
