@@ -7,12 +7,16 @@
 //
 
 import UIKit
-
+import RealmSwift
+ 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-
+    let realm = try! Realm()
+    lazy var colleges: Results<College> = {
+        self.realm.objects(College.self)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +29,15 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        for college in colleges {
+            objects.append(college)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +58,7 @@ class MasterViewController: UITableViewController {
             textField.placeholder = "Population"
             textField.keyboardType = UIKeyboardType.numberPad
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
@@ -66,6 +75,9 @@ class MasterViewController: UITableViewController {
                             population: population,
                             image: UIImagePNGRepresentation(image)!)
             self.objects.append(college)
+            try! self.realm.write {
+                self.realm.add(college)
+            }
             self.tableView.reloadData()
         }
     }
@@ -99,8 +111,8 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row] as! College
+        cell.textLabel!.text = object.name
         return cell
     }
 
@@ -112,6 +124,10 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             objects.remove(at: indexPath.row)
+            let college = objects.remove(at: indexPath.row) as! College
+            try! self.realm.write {
+                self.realm.delete(college)
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
