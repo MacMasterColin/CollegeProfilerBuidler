@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1E3F041EC3364800550016 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E3F031EC3364800550016 /* LocationViewController.swift */; };
 		3F715BE91E4B8B5C002FFBA0 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F715BE81E4B8B5C002FFBA0 /* College.swift */; };
 		3F87F87D1E5CAF1900BCE1EB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F87F87B1E5CAF1900BCE1EB /* Realm.framework */; };
 		3F87F87E1E5CAF1900BCE1EB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F87F87B1E5CAF1900BCE1EB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F1E3F031EC3364800550016 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		3F715BE81E4B8B5C002FFBA0 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		3F87F87B1E5CAF1900BCE1EB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		3F87F87C1E5CAF1900BCE1EB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				3F91F9511E48E8FD00C999CB /* MasterViewController.swift */,
 				3F715BE81E4B8B5C002FFBA0 /* College.swift */,
 				3F91F9531E48E8FD00C999CB /* DetailViewController.swift */,
+				3F1E3F031EC3364800550016 /* LocationViewController.swift */,
 				3F91F9551E48E8FD00C999CB /* Main.storyboard */,
 				3F91F9581E48E8FD00C999CB /* Assets.xcassets */,
 				3F91F95A1E48E8FD00C999CB /* LaunchScreen.storyboard */,
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1E3F041EC3364800550016 /* LocationViewController.swift in Sources */,
 				3F91F9541E48E8FD00C999CB /* DetailViewController.swift in Sources */,
 				3F91F9521E48E8FD00C999CB /* MasterViewController.swift in Sources */,
 				3F91F9501E48E8FD00C999CB /* AppDelegate.swift in Sources */,

@@ -9,12 +9,13 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var populationTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     let realm = try! Realm()
+    let imagePicker = UIImagePickerController()
     var detailItem: College? {
         didSet {
             // Update the view.
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        imagePicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +46,19 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true) { 
+            let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.imageView.image = selectedImage
+        }
+    }
+        
+    @IBAction func ChangePhotoButton(_ sender: Any) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
     if let college = self.detailItem {
         try! realm.write({
